@@ -30,7 +30,7 @@
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                {{ __('登出') }}
+                                {{ __('Logout') }}
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -40,11 +40,11 @@
                         </li>
                         @else
                         <li class="nav-item">
-                            <a class="nav-link" a href="{{ route('login') }}">登入</a>
+                            <a class="nav-link" a href="{{ route('login') }}">Login</a>
                         </li>
                         <li class="nav-item">
                                 @if (Route::has('register'))
-                                    <a class="nav-link" a href="{{ route('register') }}">註冊</a>
+                                    <a class="nav-link" a href="{{ route('register') }}">Register</a>
                                 @endif
                         @endauth
                     @endif
