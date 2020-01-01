@@ -7,13 +7,15 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
+                <li class="nav-item ">
                     <a class="nav-link" href="{{ url('/home') }}">電影介紹
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('searchtime.index') }}">時刻查詢</a>
+                <li class="nav-item ">
+                    <a class="nav-link" href="{{ route('searchtime.index') }}">時刻查詢
+                        <span class="sr-only">(current)</span>
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('reservation.index') }}">開始訂票</a>
