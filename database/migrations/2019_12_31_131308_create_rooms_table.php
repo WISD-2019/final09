@@ -14,8 +14,12 @@ class CreateRoomsTable extends Migration
     public function up()
     {
         Schema::create('rooms', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+            $table->bigIncrements('id');/**影廳編號*/
+            $table->string('name');/**影廳名稱*/
+            $table->integer('row');/**排數*/
+            $table->integer('row_num');/**每排座位數*/
+
+
         });
     }
 

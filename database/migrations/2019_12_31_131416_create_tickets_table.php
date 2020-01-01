@@ -14,8 +14,7 @@ class CreateTicketsTable extends Migration
     public function up()
     {
         Schema::create('tickets', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
+            $table->bigIncrements('id');/**電影票編號*/
         });
     }
 

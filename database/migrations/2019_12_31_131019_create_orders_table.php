@@ -14,9 +14,14 @@ class CreateOrdersTable extends Migration
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->timestamps();
-            
+            $table->bigIncrements('id');/**預約編號*/
+            $table->timestamps();/**時間戳記*/
+            $table->boolean('is_payed');/**是否付款*/
+            $table->boolean('is_canceled');/**是否取消*/
+            $table->integer('total');/**總金額*/
+            $table->integer('payed_money');/**已付金額*/
+            $table->date('canceled_date');/**取消日期時間*/
+            $table->dateTime('checkin_time');/**取票時間*/
         });
     }
 
