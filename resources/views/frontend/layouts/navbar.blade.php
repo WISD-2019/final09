@@ -8,7 +8,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item ">
-                    <a class="nav-link" href="{{ url('/home') }}">電影介紹
+                    <a class="nav-link" href="{{ url('') }}">電影介紹
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
