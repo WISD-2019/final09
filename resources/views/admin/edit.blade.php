@@ -5,42 +5,59 @@
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">
-                編輯文章 <small>編輯文章內容</small>
+                編輯電影 <small>編輯電影內容</small>
             </h1>
             <ol class="breadcrumb">
                 <li class="active">
-                    <i class="fa fa-edit"></i> 文章管理
+                    <i class="fa fa-edit"></i> 電影管理
                 </li>
             </ol>
         </div>
     </div>
     <!-- /.row -->
-    @include('admin.layouts.partials.validation')
+
     <!-- /.row -->
 
     <div class="row">
         <div class="col-lg-12">
-            <form action="/admin/posts/{{$movie->id}}" method="POST" role="form">
+            <form action="{{ route('admin.update', $movie->id) }}" method="POST" role="form">
                 {{ csrf_field() }}
                 {{ method_field('PATCH') }}
                 <form role="form">
 
                     <div class="form-group">
-                        <label>標題：</label>
-                        <input name="title" class="form-control" placeholder="請輸入文章標題" value="{{$movie->title}}">
+                        <label>電影名稱：</label>
+                        <input name="name" class="form-control" placeholder="請輸入電影名稱" value="{{$movie->name}}">
                     </div>
 
                     <div class="form-group">
-                        <label>內容：</label>
-                        <textarea name="content" class="form-control" rows="10">{{$movie->content}}</textarea>
+                        <label>宣傳海報網址：</label>
+                        <input name="photo_url" class="form-control" placeholder="請輸入電影宣傳海報網址" value="{{$movie->photo_url}}">
                     </div>
 
                     <div class="form-group">
-                        <label>精選？</label>
-                        <select name="is_feature" class="form-control" >
-                            <option value="0" {{ $movie->is_feature?'':'SELECTED' }}>否</option>
-                            <option value="1" {{ $movie->is_feature?'SELECTED':'' }}>是</option>
-                        </select>
+                        <label>導演：</label>
+                        <input name="director" class="form-control" placeholder="請輸入導演名字" value="{{$movie->director}}">
+                    </div>
+
+                    <div class="form-group">
+                        <label>演員：</label>
+                        <input name="actor" class="form-control" placeholder="請輸入演員陣容" value="{{$movie->actor}}">
+                    </div>
+
+                    <div class="form-group">
+                        <label>電影介紹：</label>
+                        <textarea name="introduction" class="form-control" rows="10">{{$movie->introduction}}</textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>片長：</label>
+                        <input name="length" class="form-control" placeholder="請輸入片長" value="{{$movie->length}}">
+                    </div>
+
+                    <div class="form-group">
+                        <label>上映日期：</label>
+                        <input name="start_date" class="form-control" placeholder="請輸入上映日期" value="{{$movie->start_date}}">
                     </div>
 
                     <div class="text-right">

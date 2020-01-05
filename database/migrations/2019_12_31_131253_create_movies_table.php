@@ -22,6 +22,7 @@ class CreateMoviesTable extends Migration
             $table->longText('actor');/**演員*/
             $table->string('length');/**片長*/
             $table->date('start_date');/**上映日期*/
+            $table->timestamps();
 
         });
     }
