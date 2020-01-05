@@ -16,7 +16,7 @@ class AdminController extends Controller
     {
         $movies=Movie::orderBy('created_at','DESC')->get();
         $data=['movies'=>$movies];
-        return view('admin.index',$data);
+        return view('admin.movie.index',$data);
     }
 
     /**
@@ -27,7 +27,7 @@ class AdminController extends Controller
     public function create()
     {
         //
-        return view('admin.create');
+        return view('admin.movie.create');
     }
 
     /**
@@ -40,7 +40,7 @@ class AdminController extends Controller
     {
         //
         Movie::create($request->all());
-        return redirect()->route('admin.index');
+        return redirect()->route('admin.movie.index');
     }
 
     /**
@@ -65,7 +65,7 @@ class AdminController extends Controller
         //
         $movie=Movie::find($id);
         $data=['movie'=>$movie];
-        return view('admin.edit',$data);
+        return view('admin.movie.edit',$data);
     }
 
     /**
@@ -80,7 +80,7 @@ class AdminController extends Controller
         //
         $movie=Movie::find($id);
         $movie->update($request->all());
-        return redirect()->route('admin.index');
+        return redirect()->route('admin.movie.index');
     }
 
     /**
@@ -93,6 +93,6 @@ class AdminController extends Controller
     {
         //
         Movie::destroy($id);
-        return redirect()->route('admin.index');
+        return redirect()->route('admin.movie.index');
     }
 }

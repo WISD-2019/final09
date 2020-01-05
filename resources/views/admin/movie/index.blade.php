@@ -18,7 +18,7 @@
 
     <div class="row" style="margin-bottom: 20px; text-align: right">
         <div class="col-lg-12">
-            <a href="{{ route('admin.create') }}" class="btn btn-success">建立新電影</a>
+            <a href="{{ route('admin.movie.create') }}" class="btn btn-success">建立新電影</a>
         </div>
     </div>
     <!-- /.row -->
@@ -42,9 +42,9 @@
                             <td>{{ $movie->name }}</td>
                             <td style="text-align: center">{{$movie->start_date}}</td>
                             <td>
-                                <a href="{{route('admin.edit',$movie->id)}}">編輯</a>
+                                <a href="{{route('admin.movie.edit',$movie->id)}}">編輯</a>
                                 /
-                                <form action="{{ route('admin.destroy', $movie->id) }}" method="POST">
+                                <form action="{{ route('admin.movie.destroy', $movie->id) }}" method="POST">
                                     {{csrf_field()}}
                                     {{method_field('DELETE')}}
 

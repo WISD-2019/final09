@@ -26,12 +26,20 @@ Auth::routes();
 Route::get('/home/', 'HomeController@index')->name('index');
 
 //後台
+//電影管理
 Route::group(['prefix' => 'admin'], function() {
     Route::get('/', ['as' => 'admin.dashboard.index', 'uses' => 'DashboardController@index']);
-    Route::get('/movies/{id}/edit', ['as' => 'admin.edit'  , 'uses' => 'AdminController@edit']);
-    Route::get('/movies'          , ['as' => 'admin.index' , 'uses' => 'AdminController@index']);
-    Route::get('/movies/create'   , ['as' => 'admin.create', 'uses' => 'AdminController@create']);
-    Route::patch('/movies/{id}',    ['as' => 'admin.update', 'uses' => 'AdminController@update']);
-    Route::post('/movies',['as'=>'admin.store','uses'=> 'AdminController@store']);
-    Route::delete('/movies/{id}'  , ['as' => 'admin.destroy', 'uses' => 'AdminController@destroy']);
+    Route::get('/movies/{id}/edit', ['as' => 'admin.movie.edit'  , 'uses' => 'AdminController@edit']);
+    Route::get('/movies'          , ['as' => 'admin.movie.index' , 'uses' => 'AdminController@index']);
+    Route::get('/movies/create'   , ['as' => 'admin.movie.create', 'uses' => 'AdminController@create']);
+    Route::patch('/movies/{id}',    ['as' => 'admin.movie.update', 'uses' => 'AdminController@update']);
+    Route::post('/movies',['as'=>'admin.movie.store','uses'=> 'AdminController@store']);
+    Route::delete('/movies/{id}'  , ['as' => 'admin.movie.destroy', 'uses' => 'AdminController@destroy']);
+//場次管理
+    Route::get('/sections', ['as' => 'admin.section.edit', 'uses' => 'AdminsectionController@edit']);
+    Route::get('/sections', ['as' => 'admin.section.index', 'uses' => 'AdminsectionController@index']);
+    Route::get('/sections/create', ['as' => 'admin.section.create', 'uses' => 'AdminsectionController@create']);
+    Route::patch('/sections/{id}', ['as' => 'admin.section.update', 'uses' => 'AdminsectionController@update']);
+    Route::post('/sections', ['as' => 'admin.section.store', 'uses' => 'AdminsectionController@store']);
+    Route::delete('/sections/{id}', ['as' => 'admin.section.destroy', 'uses' => 'AdminsectionController@destroy']);
 });
