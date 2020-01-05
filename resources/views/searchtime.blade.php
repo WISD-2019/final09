@@ -18,34 +18,22 @@
     <h2>時刻查詢</h2>
     <table class="table table-hover">
         <tbody>
+        @foreach($movies as $movie)
         <tr>
             <td><div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="https://capi.showtimes.com.tw/thumbs/3f/3fa5258bafeb6d654d70fc2ae6327a68.jpeg" alt=""></a>
+                        <a href="#"><img class="card-img-top" src="{{$movie->photo_url}}" alt=""></a>
                     </div>
                 </div>
             </td>
-            <td></td>
-            <td></td>
+            <td>時刻表</td>
+            @foreach($sections as $section)
+                @if ($section->movie_id==$movie->id)
+                    <td>{{$section->start_time}}</td>
+                @endif
+            @endforeach
         </tr>
-        <tr>
-            <td><div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="https://capi.showtimes.com.tw/thumbs/01/01d457eb9879822215f8ca928eccd740.jpeg" alt=""></a>
-                    </div>
-                </div></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td><div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="https://capi.showtimes.com.tw/thumbs/99/99d1c1c00791b164fc3ca8bf2cc687ec.jpeg" alt=""></a>
-                    </div>
-                </div></td>
-            <td></td>
-            <td></td>
-        </tr>
+        @endforeach
         </tbody>
     </table>
 </div>
