@@ -16,7 +16,7 @@ class CreateSectionsTable extends Migration
         Schema::create('sections', function (Blueprint $table) {
             $table->bigIncrements('id');/**場次編號*/
             $table->time('start_time');/**場次開始時間*/
-            $table->time('end_time');/**場次結束時間*/
+            $table->integer('movie_id')->index();/**電影編號 外來鍵*/
         });
     }
 

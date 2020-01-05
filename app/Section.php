@@ -15,4 +15,8 @@ class Section extends Model
     {
         return $this->belongsTo(Room::class);
     }
+    public function Movie()
+    {
+        return $this->belongsTo(Movie::class);
+    }
 }
