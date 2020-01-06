@@ -36,7 +36,7 @@ Route::group(['prefix' => 'admin'], function() {
     Route::post('/movies',['as'=>'admin.movie.store','uses'=> 'AdminController@store']);
     Route::delete('/movies/{id}'  , ['as' => 'admin.movie.destroy', 'uses' => 'AdminController@destroy']);
 //場次管理
-    Route::get('/sections', ['as' => 'admin.section.edit', 'uses' => 'AdminsectionController@edit']);
+    Route::get('/sections/{id}/edit', ['as' => 'admin.section.edit'  , 'uses' => 'AdminsectionController@edit']);
     Route::get('/sections', ['as' => 'admin.section.index', 'uses' => 'AdminsectionController@index']);
     Route::get('/sections/create', ['as' => 'admin.section.create', 'uses' => 'AdminsectionController@create']);
     Route::patch('/sections/{id}', ['as' => 'admin.section.update', 'uses' => 'AdminsectionController@update']);

@@ -5,11 +5,11 @@
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">
-                電影管理 <small>所有電影列表</small>
+                場次管理 <small>所有場次列表</small>
             </h1>
             <ol class="breadcrumb">
                 <li class="active">
-                    <i class="fa fa-edit"></i> 電影管理
+                    <i class="fa fa-edit"></i> 場次管理
                 </li>
             </ol>
         </div>
@@ -18,7 +18,7 @@
 
     <div class="row" style="margin-bottom: 20px; text-align: right">
         <div class="col-lg-12">
-            <a href="{{ route('admin.movie.create') }}" class="btn btn-success">建立新電影</a>
+            <a href="{{ route('admin.section.create') }}" class="btn btn-success">建立新場次</a>
         </div>
     </div>
     <!-- /.row -->
@@ -29,26 +29,26 @@
                 <table class="table table-bordered table-hover">
                     <thead>
                     <tr>
-                        <th width="30" style="text-align: center">#</th>
                         <th width="100" style="text-align: center">電影名稱</th>
-                        <th width="100" style="text-align: center">上映日期</th>
-                        <th width="100" style="text-align: center">功能</th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach($movies as $movie)
                         <tr>
-                            <td style="text-align: center">{{ $movie->id }}</td>
-                            <td>{{ $movie->name }}</td>
-                            <td style="text-align: center">{{$movie->start_date}}</td>
-                            <td>
-                                <a href="{{route('admin.movie.edit',$movie->id)}}">編輯</a>
-                                <form action="{{ route('admin.movie.destroy', $movie->id) }}" method="POST">
-                                    {{csrf_field()}}
-                                    {{method_field('DELETE')}}
+                            <td style="text-align: center">{{$movie->name}}
+                            @foreach($sections as $section)
+                                <td>
+                                @if ($section->movie_id==$movie->id)
+                                    {{$section->start_time}}
+                                        <form action="{{ route('admin.section.destroy', $section->id) }}" method="POST">
+                                            {{csrf_field()}}
+                                            {{method_field('DELETE')}}
 
-                                    <button class="btn btn-link">刪除</button>
-                                </form>
+                                            <button class="btn btn-link">刪除</button>
+                                        </form>
+                                @endif
+                                </td>
+                            @endforeach
                             </td>
                         </tr>
                     @endforeach
