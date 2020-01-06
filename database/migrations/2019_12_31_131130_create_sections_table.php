@@ -17,6 +17,7 @@ class CreateSectionsTable extends Migration
             $table->bigIncrements('id');/**場次編號*/
             $table->time('start_time');/**場次開始時間*/
             $table->integer('movie_id');/**電影編號 外來鍵*/
+            $table->timestamps();
         });
     }
 
