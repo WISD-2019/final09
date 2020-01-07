@@ -18,8 +18,8 @@ Route::get('/', function () {
 Route::get('/', 'MovieController@index');
 //reservation
 Route::get('/reservation',['as'=>'reservation.index','uses'=> 'ReservationController@index']);
-Route::get('/reservation2',['as'=>'reservation.index2','uses'=> 'ReservationController@index2']);
-Route::get('/reservation3',['as'=>'reservation.index3','uses'=> 'ReservationController@index3']);
+Route::post('/reservation',['as'=>'reservation.store','uses'=> 'ReservationController@store']);
+Route::get('/done', 'ReservationController@index2');
 //searchtime
 Route::get('/searchtime',['as'=>'searchtime.index','uses'=> 'SearchTimeController@index']);
 //Auth
