@@ -1,6 +1,6 @@
 ## 首頁
 
-<p align="center"><img src="https://imgur.com/dkosiHM" ></p>
+<p align="center"><img src="https://i.imgur.com/dkosiHM.png" ></p>
 
 ## 電影時刻表
 
