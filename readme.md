@@ -4,22 +4,22 @@
 
 ## 電影時刻表
 
-<p align="center"><img src=https://imgur.com/Qk485fd ></p>
+<p align="center"><img src="https://i.imgur.com/Qk485fd.png" ></p>
 
 ## 開始訂票
 
-<p align="center"><img src=https://imgur.com/2yS7SWl ></p>
-<p align="center"><img src=https://imgur.com/zFHFYta ></p>
+<p align="center"><img src="https://i.imgur.com/2yS7SWl.png" ></p>
+<p align="center"><img src="https://i.imgur.com/zFHFYta.png" ></p>
 
 ## 後台電影管理
 
-<p align="center"><img src=https://imgur.com/grOQvw5 ></p>
-<p align="center"><img src=https://imgur.com/A6FHa58 ></p>
+<p align="center"><img src="https://i.imgur.com/grOQvw5.png" ></p>
+<p align="center"><img src="https://i.imgur.com/A6FHa58.png" ></p>
 
 ## 後台場次管理
 
-<p align="center"><img src=https://imgur.com/P7ZLs8K ></p>
-<p align="center"><img src=https://imgur.com/Y6YZbr0 ></p>
+<p align="center"><img src="https://i.imgur.com/P7ZLs8K.png" ></p>
+<p align="center"><img src="https://i.imgur.com/Y6YZbr0.png" ></p>
 
 ## 電影售票
 
@@ -65,7 +65,7 @@
 
 -畫面供使用者使用，且使用起來方便且舒適。
 
-•	後台樣板
+•	後台樣板-lara_0901
 
 -簡易操作的畫面，供管理者使用。
 
