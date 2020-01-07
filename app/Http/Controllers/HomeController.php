@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Movie;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -19,6 +20,20 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home/index');
+        $movies = Movie::all();
+
+        return view('home/index', [
+            'movies' => $movies,
+        ]);
+    }
+    public function type()
+    {
+        $type=Auth::user()->type;
+        if($type == 0){
+            return redirect('/admin');
+        }
+        else{
+            return redirect('/home');
+        }
     }
 }
