@@ -14,13 +14,15 @@
 Route::get('/', function () {
     return view('home.index');
 });
+//MovieIndex
 Route::get('/', 'MovieController@index');
 //reservation
 Route::get('/reservation',['as'=>'reservation.index','uses'=> 'ReservationController@index']);
-Route::get('/reservation2','reservation@index2')->name('reservation2');
-
+Route::get('/reservation2',['as'=>'reservation.index2','uses'=> 'ReservationController@index2']);
+Route::get('/reservation3',['as'=>'reservation.index3','uses'=> 'ReservationController@index3']);
+//searchtime
 Route::get('/searchtime',['as'=>'searchtime.index','uses'=> 'SearchTimeController@index']);
-
+//Auth
 Auth::routes();
 
 Route::get('/home/', 'HomeController@index')->name('index');
