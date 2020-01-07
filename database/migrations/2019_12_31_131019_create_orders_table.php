@@ -16,12 +16,9 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');/**預約編號*/
             $table->timestamps();/**時間戳記*/
-            $table->boolean('is_payed');/**是否付款*/
-            $table->boolean('is_canceled');/**是否取消*/
-            $table->integer('total');/**總金額*/
-            $table->integer('payed_money');/**已付金額*/
-            $table->date('canceled_date');/**取消日期時間*/
-            $table->dateTime('checkin_time');/**取票時間*/
+            $table->integer('sheets');/**訂購張數*/
+            $table->string('movie_name');/**外來鍵 電影編號*/
+            $table->time('section_start_time');/**外來鍵 場次編號*/
         });
     }
 
