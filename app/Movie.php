@@ -22,4 +22,8 @@ class Movie extends Model
     {
         return $this->hasMany(Section::class);
     }
+    public function Order()
+    {
+        return $this->hasMany(Order::class);
+    }
 }

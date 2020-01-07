@@ -25,4 +25,8 @@ class Section extends Model
     {
         return $this->belongsTo(Movie::class);
     }
+    public function Order()
+    {
+        return $this->hasMany(Order::class);
+    }
 }
